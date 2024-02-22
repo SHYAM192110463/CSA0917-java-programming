@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        byte myByte = 100;
+        short myShort = myByte;
+        int myInt = myShort;
+        long myLong = myInt;
+        float myFloat = myLong;
+        double myDouble = myFloat;
+
+        System.out.println("Implicit conversion (widening) from smaller data types to larger ones:");
+        System.out.println("Byte: " + myByte);
+        System.out.println("Short: " + myShort);
+        System.out.println("Int: " + myInt);
+        System.out.println("Long: " + myLong);
+        System.out.println("Float: " + myFloat);
+        System.out.println("Double: " + myDouble);
+
+        System.out.print("\nEnter a double value: ");
+        double myDouble2 = scanner.nextDouble();
+        float myFloat2 = (float) myDouble2;
+        long myLong2 = (long) myFloat2;
+        int myInt2 = (int) myLong2;
+        short myShort2 = (short) myInt2;
+        byte myByte2 = (byte) myShort2;
+
+        System.out.println("\nExplicit conversion (narrowing) from larger data types to smaller ones:");
+        System.out.println("Double: " + myDouble2);
+        System.out.println("Float: " + myFloat2);
+        System.out.println("Long: " + myLong2);
+        System.out.println("Int: " + myInt2);
+        System.out.println("Short: " + myShort2);
+        System.out.println("Byte: " + myByte2);
+
+        System.out.print("\nEnter an int value: ");
+        int myInt3 = scanner.nextInt();
+        byte myByte3 = (byte) myInt3;
+
+        System.out.println("\nOverflow and underflow scenarios where the value exceeds the range of the target data type:");
+        System.out.println("Int: " + myInt3);
+        System.out.println("Byte: " + myByte3);
+
+        scanner.close();
+    }
+}
