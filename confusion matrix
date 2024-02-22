@@ -1,0 +1,34 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of true positives (TP): ");
+        int tp = scanner.nextInt();
+
+        System.out.print("Enter the number of true negatives (TN): ");
+        int tn = scanner.nextInt();
+
+        System.out.print("Enter the number of false positives (FP): ");
+        int fp = scanner.nextInt();
+
+        System.out.print("Enter the number of false negatives (FN): ");
+        int fn = scanner.nextInt();
+
+        double precision = (double) tp / (tp + fp);
+        double recall = (double) tp / (tp + fn);
+        double f1Score = 2 * ((precision * recall) / (precision + recall));
+
+        System.out.println("\nConfusion Matrix:");
+        System.out.println("True Positives (TP): " + tp);
+        System.out.println("True Negatives (TN): " + tn);
+        System.out.println("False Positives (FP): " + fp);
+        System.out.println("False Negatives (FN): " + fn);
+        System.out.println("\nPrecision: " + precision);
+        System.out.println("Recall: " + recall);
+        System.out.println("F1-Score: " + f1Score);
+
+        scanner.close();
+    }
+}
