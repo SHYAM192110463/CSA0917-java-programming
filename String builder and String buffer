@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a string to append: ");
+        String strToAppend = scanner.nextLine();
+
+        StringBuilder stringBuilder = new StringBuilder("Hello");
+        StringBuffer stringBuffer = new StringBuffer("Hello");
+
+        stringBuilder.append(strToAppend);
+        stringBuffer.append(strToAppend);
+
+        System.out.println("StringBuilder: " + stringBuilder);
+        System.out.println("StringBuffer: " + stringBuffer);
+
+        System.out.print("Enter the number of iterations for performance comparison: ");
+        int iterations = scanner.nextInt();
+
+        long startTimeStringBuilder = System.nanoTime();
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < iterations; i++) {
+            sb.append("Hello");
+        }
+        long endTimeStringBuilder = System.nanoTime();
+        long durationStringBuilder = endTimeStringBuilder - startTimeStringBuilder;
+        System.out.println("Time taken by StringBuilder: " + durationStringBuilder + " nanoseconds");
+
+        long startTimeStringBuffer = System.nanoTime();
+        StringBuffer sf = new StringBuffer();
+        for (int i = 0; i < iterations; i++) {
+            sf.append("Hello");
+        }
+        long endTimeStringBuffer = System.nanoTime();
+        long durationStringBuffer = endTimeStringBuffer - startTimeStringBuffer;
+        System.out.println("Time taken by StringBuffer: " + durationStringBuffer + " nanoseconds");
+
+        scanner.close();
+    }
+}
