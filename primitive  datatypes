@@ -1,0 +1,42 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter a byte value: ");
+        byte myByte = scanner.nextByte();
+
+        System.out.print("Enter a short value: ");
+        short myShort = scanner.nextShort();
+
+        System.out.print("Enter an int value: ");
+        int myInt = scanner.nextInt();
+
+        System.out.print("Enter a long value: ");
+        long myLong = scanner.nextLong();
+
+        System.out.print("Enter a float value: ");
+        float myFloat = scanner.nextFloat();
+
+        System.out.print("Enter a double value: ");
+        double myDouble = scanner.nextDouble();
+
+        System.out.print("Enter a char value: ");
+        char myChar = scanner.next().charAt(0);
+
+        System.out.print("Enter a boolean value (true/false): ");
+        boolean myBoolean = scanner.nextBoolean();
+
+        System.out.println("Byte: " + myByte);
+        System.out.println("Short: " + myShort);
+        System.out.println("Int: " + myInt);
+        System.out.println("Long: " + myLong);
+        System.out.println("Float: " + myFloat);
+        System.out.println("Double: " + myDouble);
+        System.out.println("Char: " + myChar);
+        System.out.println("Boolean: " + myBoolean);
+
+        scanner.close();
+    }
+}
