@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Enter the number of rows: ");
+        int rows = scanner.nextInt();
+
+        System.out.print("Enter the number of columns: ");
+        int cols = scanner.nextInt();
+
+        int[][] matrixA = new int[rows][cols];
+        int[][] matrixB = new int[rows][cols];
+
+        System.out.println("Populating matrix A...");
+        for (int row = 0; row < rows; row++) {
+            for (int col = 0; col < cols; col++) {
+                matrixA[row][col] = row * cols + col + 1;
+            }
+        }
+
+        System.out.println("Populating matrix B...");
+        for (int row = 0; row < rows; row++) {
+            for (int col = cols - 1, counter = 9; col >= 0; col--, counter--) {
+                matrixB[row][col] = counter;
+            }
+        }
+
+        System.out.println("\nMatrix A:\n");
+        displayMatrix(matrixA);
+
+        System.out.println("\nMatrix B:\n");
+        displayMatrix(matrixB);
+
+        scanner.close();
+    }
+
+    private static void displayMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.printf("%6d", element);
+            }
+            System.out.println();
+        }
+    }
+}
